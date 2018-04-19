@@ -39,67 +39,64 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvSubTitle"
                         style="@style/TextMediumBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:layout_marginTop="30dp"
-                        android:text="Attendance Details"
+                        android:layout_marginTop="20dp"
+                        android:text="Add Subject"
                         android:textColor="#fff"
                         android:textStyle="bold" />
 
-                    <TextView
-                        style="@style/TextMediumNormal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:paddingEnd="30dp"
-                        android:paddingStart="30dp"
-                        android:layout_marginTop="@dimen/twenty_dp"
-                        android:text="@string/select_subject"
-                        android:textSize="15sp"
-                        android:textColor="@android:color/white" />
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/bg_rectangle_spinner">
-
-                        <Spinner
-                            android:id="@+id/spSubject"
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:entries="@array/subjects"
-                            android:spinnerMode="dropdown"
-                            android:overlapAnchor="false"
-                            android:theme="@style/SpinnerItemStyle" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal"
                         android:paddingEnd="30dp"
                         android:paddingStart="30dp">
 
                         <android.support.design.widget.TextInputLayout
-
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColorHint="#f0f7f4"
                             android:theme="@style/TextLabel">
 
                             <EditText
-                                android:id="@+id/etFacultyName"
+                                android:id="@+id/etSubCode"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/selector_bg_edit_2"
-                                android:hint="Faculty Name"
+                                android:hint="Subject Code"
+                                android:inputType="textPersonName"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:textColor="#f0f7f4"
+                                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                                android:textSize="15sp" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:paddingEnd="30dp"
+                        android:paddingStart="30dp">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="#f0f7f4"
+                            android:theme="@style/TextLabel">
+
+                            <EditText
+                                android:id="@+id/etSubjectTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/selector_bg_edit_2"
+                                android:hint="Subject Title"
                                 android:inputType="textPersonName"
                                 android:paddingBottom="10dp"
                                 android:paddingTop="10dp"
@@ -112,7 +109,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:paddingEnd="30dp"
                         android:paddingStart="30dp">
@@ -125,15 +122,74 @@
                             android:theme="@style/TextLabel">
 
                             <EditText
-                                android:id="@+id/etDate"
+                                android:id="@+id/etLecturerName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/selector_bg_edit_2"
-                                android:hint="Date (mm/dd/yyyy)"
+                                android:hint="Lecturer Name"
                                 android:inputType="textPersonName"
                                 android:paddingBottom="10dp"
                                 android:paddingTop="10dp"
-                                android:focusable="false"
+                                android:textColor="#f0f7f4"
+                                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                                android:textSize="15sp" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingEnd="30dp"
+                        android:paddingStart="30dp">
+
+                        <android.support.design.widget.TextInputLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="#f0f7f4"
+                            android:theme="@style/TextLabel">
+
+                            <EditText
+                                android:id="@+id/etLecturerEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/selector_bg_edit_2"
+                                android:hint="Lecturer Email"
+                                android:inputType="textEmailAddress"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:textColor="#f0f7f4"
+                                android:textCursorDrawable="@drawable/bg_input_cursor_2"
+                                android:textSize="15sp" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingEnd="30dp"
+                        android:paddingStart="30dp">
+
+                        <android.support.design.widget.TextInputLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="#f0f7f4"
+                            android:theme="@style/TextLabel">
+
+                            <EditText
+                                android:id="@+id/etCollegeName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/selector_bg_edit_2"
+                                android:hint="College Name"
+                                android:inputType="textEmailAddress"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
                                 android:textColor="#f0f7f4"
                                 android:textCursorDrawable="@drawable/bg_input_cursor_2"
                                 android:textSize="15sp" />
@@ -149,13 +205,13 @@
         <Button
             android:id="@+id/btnSubmit"
             style="@style/TextMediumBold"
-            android:layout_width="320dp"
+            android:layout_width="314dp"
             android:layout_height="@dimen/dp_50"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_btn_red"
             android:stateListAnimator="@drawable/state_list_animator_z"
-            android:text="Take Attendances"
+            android:text="Add Subject"
             android:textColor="@android:color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

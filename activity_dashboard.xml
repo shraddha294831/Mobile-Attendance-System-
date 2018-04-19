@@ -27,6 +27,46 @@
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cvUnits"
+                android:layout_width="@dimen/dp_170"
+                android:layout_height="@dimen/dp_230"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/ten_dp"
+                card_view:cardCornerRadius="@dimen/ten_dp"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_bg_color"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ten_dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:src="@drawable/units" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="false"
+                        android:text="@string/units"
+                        android:layout_marginTop="@dimen/fifteen_dp"
+                        style="@style/TextSmallBold"
+                        android:textColor="@android:color/white"
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
                 android:id="@+id/cvManageStudents"
                 android:layout_width="@dimen/dp_170"
                 android:layout_height="@dimen/dp_230"
@@ -64,6 +104,15 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <android.support.v7.widget.CardView
                 android:id="@+id/cvAttendance"
                 android:layout_width="@dimen/dp_170"
@@ -98,13 +147,6 @@
                         android:textColor="@android:color/white" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cvAttendanceHistory"
@@ -112,6 +154,7 @@
                 android:layout_height="@dimen/dp_230"
                 android:layout_gravity="center"
                 card_view:cardCornerRadius="@dimen/ten_dp"
+                android:layout_margin="@dimen/ten_dp"
                 card_view:cardElevation="5dp"
                 card_view:cardUseCompatPadding="true">
 

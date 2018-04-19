@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Shraddha on 3/21/2018.
+ * Created by shraddha on 3/21/2018.
  */
 
 public class StudentListAdapter extends BaseQuickAdapter<Student, BaseViewHolder> {

@@ -1,9 +1,5 @@
 package com.attendancesystem.bean;
 
-/**
- * Created by Shraddha on 3/21/2018.
- */
-
 public class StudentBean {
 
     private int rollNumber;

@@ -14,11 +14,13 @@ import java.util.Date;
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 /**
- * Created by Shraddha on 3/21/2018.
+ * Created by shraddha on 3/21/2018.
  */
 
-@Entity(foreignKeys = @ForeignKey(entity = Student.class, parentColumns = "rollNumber",
-        childColumns = "rollNumber", onDelete = CASCADE))
+@Entity(foreignKeys = {@ForeignKey(entity = Student.class, parentColumns = "rollNumber",
+        childColumns = "rollNumber", onDelete = CASCADE),
+        @ForeignKey(entity = Unit.class, parentColumns = "subCode",
+                childColumns = "subCode", onDelete = CASCADE)})
 public class Attendance {
 
     @PrimaryKey(autoGenerate = true)
@@ -37,7 +39,7 @@ public class Attendance {
     private boolean present;
 
     @NonNull
-    private String subject;
+    private String subCode;
 
     @NonNull
     @TypeConverters({DateConverter.class})
@@ -97,11 +99,11 @@ public class Attendance {
     }
 
     @NonNull
-    public String getSubject() {
-        return subject;
+    public String getSubCode() {
+        return subCode;
     }
 
-    public void setSubject(@NonNull String subject) {
-        this.subject = subject;
+    public void setSubCode(@NonNull String subCode) {
+        this.subCode = subCode;
     }
 }

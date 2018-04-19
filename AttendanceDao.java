@@ -10,12 +10,11 @@ import com.attendancesystem.database.entity.Attendance;
 import java.util.List;
 
 /**
- * Created by Shraddha on 3/21/2018.
+ * Created by shraddha on 3/21/2018.
  */
 
 @Dao
 public interface AttendanceDao {
-
 
     @Insert
     void insert(List<Attendance> attendances);
@@ -23,6 +22,9 @@ public interface AttendanceDao {
     @Insert
     void insert(Attendance attendance);
 
-    @Query("select * from Attendance where date=Date(:date)")
-    List<Attendance> getAttendance(String date);
+    @Query("select * from Attendance where date=:date and subCode=:subCode")
+    List<Attendance> getAttendance(String date, String subCode);
+
+    @Query("select * from attendance group by date,subcode order by date desc")
+    List<Attendance> getAttendanceHistory();
 }

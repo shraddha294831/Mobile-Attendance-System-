@@ -8,16 +8,20 @@ import android.content.Context;
 
 import com.attendancesystem.database.dao.AttendanceDao;
 import com.attendancesystem.database.dao.StudentDAO;
+import com.attendancesystem.database.dao.UnitDao;
+import com.attendancesystem.database.dao.UnitStudentsDao;
 import com.attendancesystem.database.entity.Attendance;
 import com.attendancesystem.database.entity.Student;
+import com.attendancesystem.database.entity.Unit;
+import com.attendancesystem.database.entity.UnitStudents;
 import com.attendancesystem.utils.DateConverter;
 
 
 /**
- * Created by Shraddha on 3/20/2018.
+ * Created by shraddha on 3/20/2018.
  */
 
-@Database(entities = {Student.class, Attendance.class}, version = 1, exportSchema = false)
+@Database(entities = {Student.class, Attendance.class, Unit.class, UnitStudents.class}, version = 1, exportSchema = false)
 @TypeConverters({DateConverter.class})
 public abstract class DatabaseMain extends RoomDatabase{
 
@@ -38,4 +42,9 @@ public abstract class DatabaseMain extends RoomDatabase{
     public abstract StudentDAO getStudentDao();
 
     public abstract AttendanceDao getAttendanceDao();
+
+    public abstract UnitDao getUnitDao();
+
+    public abstract UnitStudentsDao getUnitStudentDao();
+
 }

@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.attendancesystem.R;
 import com.attendancesystem.adapter.StudentListAdapter;
-import com.attendancesystem.bean.StudentBean;
 import com.attendancesystem.database.DatabaseMain;
 import com.attendancesystem.database.entity.Student;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -27,7 +26,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by Shraddha on 3/21/2018.
+ * Created by shraddha on 3/21/2018.
  */
 
 public class StudentListActivity extends BaseActivity {
@@ -99,6 +98,12 @@ public class StudentListActivity extends BaseActivity {
         studentListAdapter.isFirstOnly(false);
         studentListAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
         rvStudents.setAdapter(studentListAdapter);
+
+        studentListAdapter.setOnItemClickListener((adapter, view, position) -> {
+            Intent i = new Intent(StudentListActivity.this, AddStudentActivity.class);
+            i.putExtra("studentBean",studentListAdapter.getData().get(position));
+            startActivity(i);
+        });
     }
 
     private void setListData(List<Student> lsStudent){
